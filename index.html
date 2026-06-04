@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India NSS Health & Nutrition Proxy Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="eyebrow">NSS 80th Round / Schedule 25.0</div>
+        <h1>India Health & Nutrition Proxy Explorer</h1>
+        <p>Interactive dashboard for ailment spells, treatment access, and medical expenditure. Nutrition is proxied only through endocrine/metabolic/nutritional ailments.</p>
+      </div>
+
+      <div class="warning-box">
+        <strong>Dataset note</strong><br>
+        This uploaded file is Health Schedule 25.0, not the HCES food-consumption module. For a true nutrition landscape, replace/add HCES food item data.
+      </div>
+
+      <div class="control-group">
+        <label for="metricSelect">Main metric</label>
+        <select id="metricSelect">
+          <option value="avg_oop">Avg OOP episode expenditure</option>
+          <option value="avg_total">Avg total episode expenditure</option>
+          <option value="avg_medical">Avg medical expenditure</option>
+          <option value="reimb_share">Reimbursement share</option>
+          <option value="hosp_share">Hospitalisation share</option>
+          <option value="chronic_share">Chronic ailment share</option>
+          <option value="weighted_count">Weighted record count</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="layoutSelect">Layout</label>
+        <select id="layoutSelect">
+          <option value="analyst">Analyst grid</option>
+          <option value="story">Story mode</option>
+          <option value="compact">Compact</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="stateSelect">State / UT</label>
+        <select id="stateSelect" multiple size="7"></select>
+        <button class="tiny" id="clearStates">Clear states</button>
+      </div>
+
+      <div class="control-row">
+        <div class="control-group half">
+          <label for="sectorSelect">Sector</label>
+          <select id="sectorSelect"><option value="All">All</option></select>
+        </div>
+        <div class="control-group half">
+          <label for="subroundSelect">Sub-round</label>
+          <select id="subroundSelect"><option value="All">All</option></select>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="ailmentSelect">Ailment group</label>
+        <select id="ailmentSelect"><option value="All">All</option></select>
+        <button class="tiny" id="nutritionProxyBtn">Show nutrition proxy</button>
+      </div>
+
+      <div class="control-row">
+        <div class="control-group half">
+          <label for="chronicSelect">Chronicity</label>
+          <select id="chronicSelect"><option value="All">All</option></select>
+        </div>
+        <div class="control-group half">
+          <label for="hospSelect">Hospitalised</label>
+          <select id="hospSelect"><option value="All">All</option></select>
+        </div>
+      </div>
+
+      <div class="control-row">
+        <div class="control-group half">
+          <label for="topN">Top N</label>
+          <input id="topN" type="number" min="5" max="37" value="15" />
+        </div>
+        <div class="control-group half">
+          <label for="capSlider">Outlier cap</label>
+          <input id="capSlider" type="range" min="1000" max="100000" step="1000" value="50000" />
+          <span id="capValue">₹50,000</span>
+        </div>
+      </div>
+
+      <button id="resetBtn" class="primary">Reset filters</button>
+      <button id="downloadBtn" class="secondary">Download filtered CSV</button>
+      <div id="loadingStatus" class="loading">Loading data...</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Interactive, backend-free, GitHub Pages compatible</div>
+          <h2>Survey dashboard</h2>
+        </div>
+        <div class="source-pill">Row-level extract: <span id="rowCountLabel">-</span></div>
+      </header>
+
+      <section class="kpi-grid">
+        <div class="kpi"><span>Filtered records</span><strong id="kpiRows">-</strong><small>episode/spell rows</small></div>
+        <div class="kpi"><span>Weighted records</span><strong id="kpiWeighted">-</strong><small>raw multiplier sum</small></div>
+        <div class="kpi"><span>Avg OOP / episode</span><strong id="kpiOOP">-</strong><small>weighted mean</small></div>
+        <div class="kpi"><span>Hospitalised share</span><strong id="kpiHosp">-</strong><small>weighted share</small></div>
+        <div class="kpi"><span>Chronic share</span><strong id="kpiChronic">-</strong><small>weighted share</small></div>
+      </section>
+
+      <section id="chartGrid" class="chart-grid analyst">
+        <article class="chart-card large"><div class="chart-title"><h3>State map</h3><span>Bubble size = weighted records</span></div><div id="mapChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>State ranking</h3><span id="metricLabelA">Selected metric</span></div><div id="stateRankChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Ailment mix</h3><span>Weighted record share</span></div><div id="ailmentChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Treatment & care seeking</h3><span>Selectable filters apply</span></div><div id="treatmentChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Expenditure distribution</h3><span id="capLabel">Capped at ₹50,000</span></div><div id="histChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Source of finance</h3><span>Weighted shares</span></div><div id="financeChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Place of treatment</h3><span>Weighted shares</span></div><div id="placeChart" class="plot"></div></article>
+        <article class="chart-card wide"><div class="chart-title"><h3>Data explorer</h3><span>First 100 filtered rows</span></div><div id="dataTableWrap" class="table-wrap"></div></article>
+      </section>
+    </main>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
