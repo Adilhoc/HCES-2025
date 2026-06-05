@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore India's NSS 80th Round health and nutrition survey data — ailment spells, treatment access, and medical expenditure across states, sectors, and care pathways." />
+  <meta name="theme-color" content="#0f1923" />
+  <title>India NSS Health & Nutrition Proxy Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark">IN</div>
+        <div class="eyebrow">NSS 80th Round / Schedule 25.0</div>
+        <h1>India Health &amp; Nutrition Proxy Explorer</h1>
+        <p>Explore ailment spells, treatment access, and medical expenditure across states, sectors, and care pathways.</p>
+      </div>
+
+      <div class="warning-box">
+        <span>⚠ Dataset note</span>
+        <p>This file is Health Schedule 25.0. Nutrition is proxied through endocrine, metabolic, and nutritional ailments.</p>
+      </div>
+
+      <nav class="control-panel" aria-label="Dashboard filters">
+        <div class="control-group">
+          <label for="metricSelect">Main metric</label>
+          <select id="metricSelect">
+            <option value="avg_oop">Avg OOP episode expenditure</option>
+            <option value="avg_total">Avg total episode expenditure</option>
+            <option value="avg_medical">Avg medical expenditure</option>
+            <option value="reimb_share">Reimbursement share</option>
+            <option value="hosp_share">Hospitalisation share</option>
+            <option value="chronic_share">Chronic ailment share</option>
+            <option value="weighted_count">Weighted record count</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="layoutSelect">Layout</label>
+          <select id="layoutSelect">
+            <option value="analyst">Analyst grid</option>
+            <option value="story">Story mode</option>
+            <option value="compact">Compact</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="stateSelect">State / UT</label>
+          <select id="stateSelect" multiple size="7"></select>
+          <button class="tiny" id="clearStates" type="button">Clear states</button>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group half">
+            <label for="sectorSelect">Sector</label>
+            <select id="sectorSelect"><option value="All">All</option></select>
+          </div>
+          <div class="control-group half">
+            <label for="subroundSelect">Sub-round</label>
+            <select id="subroundSelect"><option value="All">All</option></select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="ailmentSelect">Ailment group</label>
+          <select id="ailmentSelect"><option value="All">All</option></select>
+          <button class="tiny" id="nutritionProxyBtn" type="button">Show nutrition proxy</button>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group half">
+            <label for="chronicSelect">Chronicity</label>
+            <select id="chronicSelect"><option value="All">All</option></select>
+          </div>
+          <div class="control-group half">
+            <label for="hospSelect">Hospitalised</label>
+            <select id="hospSelect"><option value="All">All</option></select>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group half">
+            <label for="topN">Top N</label>
+            <input id="topN" type="number" min="5" max="37" value="15" />
+          </div>
+          <div class="control-group half">
+            <label for="capSlider">Outlier cap</label>
+            <input id="capSlider" type="range" min="1000" max="100000" step="1000" value="50000" />
+            <span id="capValue">Rs.50,000</span>
+          </div>
+        </div>
+
+        <button id="resetBtn" class="primary" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          Reset filters
+        </button>
+        <button id="downloadBtn" class="secondary" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download filtered CSV
+        </button>
+        <div id="loadingStatus" class="loading">Loading data…</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Interactive · Backend-free · GitHub Pages</div>
+          <h2>Survey Dashboard</h2>
+          <p id="dashboardSubtitle">A state-by-state view of health expenditure, treatment patterns, and chronic care signals.</p>
+        </div>
+        <div class="source-pill">Row-level extract: <span id="rowCountLabel">–</span></div>
+      </header>
+
+      <section class="kpi-grid" aria-label="Key performance indicators">
+        <div class="kpi"><span>Filtered records</span><strong id="kpiRows">–</strong><small>episode/spell rows</small></div>
+        <div class="kpi"><span>Weighted records</span><strong id="kpiWeighted">–</strong><small>raw multiplier sum</small></div>
+        <div class="kpi"><span>Avg OOP / episode</span><strong id="kpiOOP">–</strong><small>weighted mean</small></div>
+        <div class="kpi"><span>Hospitalised share</span><strong id="kpiHosp">–</strong><small>weighted share</small></div>
+        <div class="kpi"><span>Chronic share</span><strong id="kpiChronic">–</strong><small>weighted share</small></div>
+      </section>
+
+      <section class="insight-band">
+        <div>
+          <span class="section-label">Current view</span>
+          <h3 id="insightHeadline">Loading survey data</h3>
+          <p id="insightText">The dashboard will summarize the selected filters once the compressed CSV is loaded.</p>
+        </div>
+        <div class="filter-summary" id="filterSummary"></div>
+      </section>
+
+      <section id="chartGrid" class="chart-grid analyst" aria-label="Visualizations">
+        <article class="chart-card large"><div class="chart-title"><h3>State map</h3><span>Bubble size = weighted records</span></div><div id="mapChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>State ranking</h3><span id="metricLabelA">Selected metric</span></div><div id="stateRankChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Ailment mix</h3><span>Weighted record share</span></div><div id="ailmentChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Treatment &amp; care seeking</h3><span>Selectable filters apply</span></div><div id="treatmentChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Expenditure distribution</h3><span id="capLabel">Capped at Rs.50,000</span></div><div id="histChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Source of finance</h3><span>Weighted shares</span></div><div id="financeChart" class="plot"></div></article>
+        <article class="chart-card"><div class="chart-title"><h3>Place of treatment</h3><span>Weighted shares</span></div><div id="placeChart" class="plot"></div></article>
+        <article class="chart-card wide"><div class="chart-title"><h3>Data explorer</h3><span>First 100 filtered rows</span></div><div id="dataTableWrap" class="table-wrap"></div></article>
+      </section>
+
+      <footer class="dashboard-footer">
+        <p>Data source: NSS 80th Round, Schedule 25.0 — Ministry of Statistics and Programme Implementation, Govt. of India</p>
+        <p>Dashboard is fully client-side. No data leaves your browser.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
