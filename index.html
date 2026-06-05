@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive HCES household food consumption dashboard for item values, food categories, acquisition source, PDS use, and online food behavior." />
+  <meta name="theme-color" content="#102033" />
+  <title>HCES Food Plate Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">FP</div>
+        <p class="eyebrow">HCES 2023-24</p>
+        <h1>Food Plate Consumption Dashboard</h1>
+        <p class="brand-copy">Explore household food consumption value across food categories, acquisition sources, states, sectors, and household context.</p>
+      </div>
+
+      <div class="note-box">
+        <strong>Dataset note</strong>
+        <p>Values are consumption values, not always cash spending. Non-market and welfare food can include imputed values.</p>
+      </div>
+
+      <nav class="controls" aria-label="Dashboard filters">
+        <div class="control-group">
+          <label for="metricSelect">Metric</label>
+          <select id="metricSelect">
+            <option value="avg_household">Average household value</option>
+            <option value="per_capita">Average per-capita value</option>
+            <option value="total_value">Total weighted value</option>
+            <option value="out_home_share">Out-of-home share</option>
+            <option value="weighted_households">Weighted households</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="categorySelect">Food category</label>
+          <select id="categorySelect">
+            <option value="All">All food categories</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="stateSelect">State / UT</label>
+          <select id="stateSelect" multiple size="7"></select>
+          <button id="clearStates" class="tiny" type="button">Clear states</button>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="sectorSelect">Sector</label>
+            <select id="sectorSelect"><option value="All">All</option></select>
+          </div>
+          <div class="control-group">
+            <label for="sourceSelect">Source</label>
+            <select id="sourceSelect"><option value="All">All</option></select>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="rationSelect">Ration use</label>
+            <select id="rationSelect">
+              <option value="All">All</option>
+              <option value="Yes">Used ration</option>
+              <option value="No">Did not use</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="pdsSelect">PDS food</label>
+            <select id="pdsSelect">
+              <option value="All">All</option>
+              <option value="Yes">Any PDS food</option>
+              <option value="No">No PDS food</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="onlineSelect">Online food</label>
+            <select id="onlineSelect">
+              <option value="All">All</option>
+              <option value="Yes">Online users</option>
+              <option value="No">No online food</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="ceremonySelect">Ceremony</label>
+            <select id="ceremonySelect">
+              <option value="All">All</option>
+              <option value="Yes">Ceremony</option>
+              <option value="No">No ceremony</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="sizeBandSelect">HH size</label>
+            <select id="sizeBandSelect"><option value="All">All</option></select>
+          </div>
+          <div class="control-group">
+            <label for="expBandSelect">Monthly exp.</label>
+            <select id="expBandSelect"><option value="All">All</option></select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="topN">Top N</label>
+          <input id="topN" type="number" min="5" max="30" value="12" />
+        </div>
+
+        <button id="resetBtn" class="primary" type="button">Reset filters</button>
+        <button id="downloadBtn" class="secondary" type="button">Download filtered households</button>
+        <p id="loadingStatus" class="loading">Loading dashboard data...</p>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Static GitHub Pages dashboard</p>
+          <h2>Household Food Consumption Explorer</h2>
+          <p id="dashboardSubtitle">Food category values use subtotal item codes to avoid double counting detailed item rows.</p>
+        </div>
+        <div class="source-pill">
+          <span id="rowCountLabel">-</span>
+          <small>households</small>
+        </div>
+      </header>
+
+      <section class="kpi-grid" aria-label="Key metrics">
+        <div class="kpi"><span>Filtered households</span><strong id="kpiRows">-</strong><small>sample households</small></div>
+        <div class="kpi"><span>Weighted households</span><strong id="kpiWeighted">-</strong><small>survey multiplier sum</small></div>
+        <div class="kpi"><span>Avg household value</span><strong id="kpiAvg">-</strong><small id="kpiAvgLabel">selected food scope</small></div>
+        <div class="kpi"><span>Avg per-capita value</span><strong id="kpiPerCapita">-</strong><small>using household size</small></div>
+        <div class="kpi"><span>PDS food share</span><strong id="kpiPds">-</strong><small>weighted households</small></div>
+        <div class="kpi"><span>Online food share</span><strong id="kpiOnline">-</strong><small>weighted households</small></div>
+      </section>
+
+      <section class="insight-band">
+        <div>
+          <p class="section-label">Current view</p>
+          <h3 id="insightHeadline">Loading food consumption data</h3>
+          <p id="insightText">The dashboard will summarize the selected filters after the compressed files load.</p>
+        </div>
+        <div id="filterSummary" class="filter-summary"></div>
+      </section>
+
+      <section class="chart-grid" aria-label="Visualizations">
+        <article class="chart-card large">
+          <div class="chart-title">
+            <div><h3>Food category mix</h3><span id="categoryScopeLabel">Weighted consumption value</span></div>
+          </div>
+          <div id="categoryChart" class="plot large-plot"></div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-title">
+            <div><h3>State ranking</h3><span id="stateMetricLabel">Selected metric</span></div>
+          </div>
+          <div id="stateChart" class="plot"></div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-title">
+            <div><h3>Source of acquisition</h3><span>Detailed item rows</span></div>
+          </div>
+          <div id="sourceChart" class="plot"></div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-title">
+            <div><h3>Food item spend mix</h3><span>Top items plus other items</span></div>
+          </div>
+          <div id="itemSpendChart" class="plot"></div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-title">
+            <div><h3>Food item ranking</h3><span>Best view for comparing item names</span></div>
+          </div>
+          <div id="itemChart" class="plot"></div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-title">
+            <div><h3>Rural / urban</h3><span>Selected food scope</span></div>
+          </div>
+          <div id="sectorChart" class="plot"></div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-title">
+            <div><h3>Consumption band</h3><span>Average household food value</span></div>
+          </div>
+          <div id="expChart" class="plot"></div>
+        </article>
+
+        <article class="chart-card wide">
+          <div class="chart-title">
+            <div><h3>Data explorer</h3><span>First 100 filtered households</span></div>
+          </div>
+          <div id="dataTableWrap" class="table-wrap"></div>
+        </article>
+      </section>
+
+      <footer class="dashboard-footer">
+        <p>Raw source: HCES 2023-24 files in the local <code>Files</code> folder. Generated dashboard data lives in <code>food_data</code>.</p>
+        <p>Prepared category totals use subtotal item codes from Sections 5, 6, and 7; detailed item/source charts exclude those subtotal rows.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
