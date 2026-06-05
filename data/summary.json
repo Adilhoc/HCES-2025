@@ -1,0 +1,13 @@
+{
+  "row_count": 96277,
+  "unique_households_in_file": 57149,
+  "states_in_file": 37,
+  "weighted_ailment_records": 18415140024.0,
+  "avg_total_episode_expenditure_rs": 962.0279477756525,
+  "avg_medical_expenditure_rs": 829.2642732853325,
+  "avg_oop_episode_rs": 944.4847106807968,
+  "reimbursement_share_pct": 1.823568341794879,
+  "hospitalised_share_pct": 0.6718787793019716,
+  "chronic_share_pct": 70.27917128044098,
+  "note": "This dashboard uses episode/spell-level records from NSS 80th Round Schedule 25.0 Health, not HCES food consumption records."
+}

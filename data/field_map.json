@@ -1,0 +1,177 @@
+{
+  "source_context": {
+    "dataset_detected": "NSS 80th Round, Schedule 25.0: Household Social Consumption - Health",
+    "survey_period": "January-December 2025",
+    "important_warning": "This is not the Household Consumption Expenditure Survey food questionnaire. Use it for morbidity/health expenditure and only as a weak nutrition proxy through endocrine/metabolic/nutritional ailment codes."
+  },
+  "field_labels": {
+    "b8i1": "Spell serial number",
+    "b8i2": "Member serial number reporting ailment",
+    "b8i3": "Age in years",
+    "b8i4": "Age in days if <1 year",
+    "b8i5": "Nature of ailment code",
+    "b8i6": "Whether chronic",
+    "b8i7": "Status of ailment",
+    "b8i8": "Total duration of ailment (days)",
+    "b8i9": "Nature of treatment",
+    "b8i10": "Whether hospitalised",
+    "b8i11": "Treatment on medical advice",
+    "b8i12": "Level of care",
+    "b8i13": "Reason for not availing government sources",
+    "b8i14": "Reason for not seeking medical advice",
+    "b8i15": "Whom consulted if no medical advice",
+    "b9i5": "Any medical service provided free/partly free",
+    "b9i6": "Surgery received/free/paid status",
+    "b9i7": "AYUSH medicine received/free/paid status",
+    "b9i8": "Non-AYUSH medicine received/free/paid status",
+    "b9i9": "X-ray/ECG/EEG/scan received/free/paid status",
+    "b9i10": "Other diagnostic tests received/free/paid status",
+    "b9i11": "Doctors/surgeons fee (Rs.)",
+    "b9i12": "Medicines - AYUSH (Rs.)",
+    "b9i13": "Medicines - other than AYUSH (Rs.)",
+    "b9i14": "Diagnostic tests (Rs.)",
+    "b9i15": "Other medical expenses (Rs.)",
+    "b9i16": "Medical expenditure total (Rs.)",
+    "b9i17": "Transport for patient (Rs.)",
+    "b9i18": "Other household expenses (Rs.)",
+    "b9i19": "Total episode expenditure (Rs.)",
+    "b9i20": "Reimbursed by insurance/employer (Rs.)",
+    "b9i21": "Major source of finance",
+    "b9i22": "Place of treatment",
+    "b9i23": "State code for place of treatment",
+    "b9i24": "Loss of household income due to treatment (Rs.)",
+    "mult": "Survey multiplier / weight"
+  },
+  "state_names": {
+    "01": "Jammu & Kashmir",
+    "02": "Himachal Pradesh",
+    "03": "Punjab",
+    "04": "Chandigarh",
+    "05": "Uttarakhand",
+    "06": "Haryana",
+    "07": "Delhi",
+    "08": "Rajasthan",
+    "09": "Uttar Pradesh",
+    "10": "Bihar",
+    "11": "Sikkim",
+    "12": "Arunachal Pradesh",
+    "13": "Nagaland",
+    "14": "Manipur",
+    "15": "Mizoram",
+    "16": "Tripura",
+    "17": "Meghalaya",
+    "18": "Assam",
+    "19": "West Bengal",
+    "20": "Jharkhand",
+    "21": "Odisha",
+    "22": "Chhattisgarh",
+    "23": "Madhya Pradesh",
+    "24": "Gujarat",
+    "25": "D&NH and Daman & Diu",
+    "27": "Maharashtra",
+    "28": "Andhra Pradesh",
+    "29": "Karnataka",
+    "30": "Goa",
+    "31": "Lakshadweep",
+    "32": "Kerala",
+    "33": "Tamil Nadu",
+    "34": "Puducherry",
+    "35": "Andaman & Nicobar Islands",
+    "36": "Telangana",
+    "37": "Ladakh",
+    "99": "Unknown / code 99"
+  },
+  "code_mappings": {
+    "sector": {
+      "1": "Rural",
+      "2": "Urban"
+    },
+    "subround": {
+      "1": "Q1 / Sub-round 1",
+      "2": "Q2 / Sub-round 2",
+      "3": "Q3 / Sub-round 3",
+      "4": "Q4 / Sub-round 4"
+    },
+    "chronic": {
+      "1": "Chronic",
+      "2": "Non-chronic"
+    },
+    "yes_no": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "status": {
+      "1": "Started >15 days ago; continuing",
+      "2": "Started >15 days ago; ended",
+      "3": "Started within 15 days; continuing",
+      "4": "Started within 15 days; ended"
+    },
+    "treatment": {
+      "1": "Allopathy",
+      "2": "AYUSH / Homoeopathy etc.",
+      "3": "Both allopathy and AYUSH",
+      "5": "No treatment",
+      "9": "Other"
+    },
+    "level_care": {
+      "1": "Govt./public hospital incl. AAM/HSC/PHC/CHC",
+      "2": "Charitable/Trust/NGO hospital",
+      "3": "Private hospital",
+      "4": "Private doctor/clinic",
+      "5": "Informal healthcare provider"
+    },
+    "free_service": {
+      "1": "Yes - govt./public",
+      "2": "Yes - private/charitable",
+      "3": "Yes - both",
+      "4": "No"
+    },
+    "service_received": {
+      "1": "Not received",
+      "2": "Received free",
+      "3": "Partly free",
+      "4": "On payment"
+    },
+    "finance_source": {
+      "1": "Household income/savings",
+      "2": "Borrowings",
+      "3": "Sale of physical assets",
+      "4": "Friends/relatives contributions",
+      "9": "Other sources"
+    },
+    "place_treatment": {
+      "1": "Same district - rural",
+      "2": "Same district - urban",
+      "3": "Different district in same state - rural",
+      "4": "Different district in same state - urban",
+      "5": "Other state"
+    },
+    "reason_not_govt": {
+      "1": "Specific services unavailable",
+      "2": "Quality not satisfactory",
+      "3": "Facility too far",
+      "4": "Long waiting",
+      "5": "Financial constraint",
+      "6": "Trusted doctor/hospital preference",
+      "9": "Other"
+    },
+    "reason_no_advice": {
+      "1": "No facility nearby",
+      "2": "Facility too expensive",
+      "3": "Cannot wait due to commitments",
+      "4": "Ailment not serious enough",
+      "5": "Familial/religious belief",
+      "9": "Other"
+    },
+    "whom_consulted": {
+      "1": "Self/household member/friend",
+      "2": "Medicine shop",
+      "9": "Other"
+    }
+  },
+  "derived_fields": {
+    "ailment_group": "Broad categories derived from Nature of ailment code (b8i5), aligned to the broad groups in MoSPI Report 596 Appendix E.",
+    "oop_episode_rs": "total_episode_expenditure_rs - reimbursed_rs, floored at zero",
+    "weight": "Raw multiplier from the file. Weighted means and weighted shares are unaffected by a constant divisor; do not treat weighted counts as official population totals without applying MoSPI estimation procedures."
+  }
+}

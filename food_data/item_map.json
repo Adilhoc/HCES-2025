@@ -1,0 +1,1283 @@
+{
+  "categories": [
+    {
+      "code": "129",
+      "slug": "cereals",
+      "label": "Cereals",
+      "column": "val_cereals"
+    },
+    {
+      "code": "139",
+      "slug": "cereal_substitutes",
+      "label": "Cereal substitutes",
+      "column": "val_cereal_substitutes"
+    },
+    {
+      "code": "159",
+      "slug": "pulses",
+      "label": "Pulses and pulse products",
+      "column": "val_pulses"
+    },
+    {
+      "code": "179",
+      "slug": "salt_sugar",
+      "label": "Salt and sugar",
+      "column": "val_salt_sugar"
+    },
+    {
+      "code": "169",
+      "slug": "milk",
+      "label": "Milk and milk products",
+      "column": "val_milk"
+    },
+    {
+      "code": "219",
+      "slug": "vegetables",
+      "label": "Vegetables",
+      "column": "val_vegetables"
+    },
+    {
+      "code": "239",
+      "slug": "fresh_fruits",
+      "label": "Fresh fruits",
+      "column": "val_fresh_fruits"
+    },
+    {
+      "code": "249",
+      "slug": "dry_fruits",
+      "label": "Dry fruits",
+      "column": "val_dry_fruits"
+    },
+    {
+      "code": "199",
+      "slug": "egg_fish_meat",
+      "label": "Egg, fish and meat",
+      "column": "val_egg_fish_meat"
+    },
+    {
+      "code": "189",
+      "slug": "edible_oil",
+      "label": "Edible oil",
+      "column": "val_edible_oil"
+    },
+    {
+      "code": "269",
+      "slug": "spices",
+      "label": "Spices",
+      "column": "val_spices"
+    },
+    {
+      "code": "279",
+      "slug": "beverages",
+      "label": "Beverages",
+      "column": "val_beverages"
+    },
+    {
+      "code": "289",
+      "slug": "served_processed",
+      "label": "Served processed food",
+      "column": "val_served_processed"
+    },
+    {
+      "code": "299",
+      "slug": "packaged_processed",
+      "label": "Packaged processed food",
+      "column": "val_packaged_processed"
+    }
+  ],
+  "items": [
+    {
+      "code": "001",
+      "name": "Coarse grains - PDS",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "002",
+      "name": "Coarse grains - other sources",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "003",
+      "name": "Item 003 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "004",
+      "name": "Item 004 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "005",
+      "name": "Item 005 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "006",
+      "name": "Item 006 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "007",
+      "name": "Item 007 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "008",
+      "name": "Item 008 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "010",
+      "name": "Item 010 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "011",
+      "name": "Item 011 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "012",
+      "name": "Item 012 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "013",
+      "name": "Item 013 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "014",
+      "name": "Item 014 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "015",
+      "name": "Item 015 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "055",
+      "name": "Jowar and products - PDS",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "056",
+      "name": "Bajra and products - PDS",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "059",
+      "name": "Ragi and products - PDS",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "061",
+      "name": "Rice - free",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "062",
+      "name": "Wheat/atta - free",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "063",
+      "name": "Item 063 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "064",
+      "name": "Item 064 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "065",
+      "name": "Item 065 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "066",
+      "name": "Item 066 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "067",
+      "name": "Item 067 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "068",
+      "name": "Item 068 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "070",
+      "name": "Coarse grains - free",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "071",
+      "name": "Pulses - free",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "072",
+      "name": "Gram - free",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "073",
+      "name": "Item 073 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "074",
+      "name": "Item 074 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "075",
+      "name": "Item 075 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "076",
+      "name": "Item 076 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "092",
+      "name": "Item 092 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "093",
+      "name": "Item 093 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "094",
+      "name": "Item 094 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "095",
+      "name": "Item 095 (Other food)",
+      "category": "Other food",
+      "category_slug": "other",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "101",
+      "name": "Rice - PDS",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "102",
+      "name": "Rice - other sources",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "103",
+      "name": "Chira",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "105",
+      "name": "Muri",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "106",
+      "name": "Other rice products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "107",
+      "name": "Wheat/atta - PDS",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "108",
+      "name": "Wheat/atta - other sources",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "110",
+      "name": "Maida",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "111",
+      "name": "Suji/rawa",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "112",
+      "name": "Vermicelli/sewai",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "113",
+      "name": "Bread/bakery",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "114",
+      "name": "Other wheat products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "115",
+      "name": "Jowar and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "116",
+      "name": "Bajra and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "117",
+      "name": "Maize and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "118",
+      "name": "Barley and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "120",
+      "name": "Small millets and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "121",
+      "name": "Ragi and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "122",
+      "name": "Other cereals and products",
+      "category": "Cereals",
+      "category_slug": "cereals",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "140",
+      "name": "Arhar/tur",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "141",
+      "name": "Gram - split",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "142",
+      "name": "Gram - whole",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "143",
+      "name": "Moong",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "144",
+      "name": "Masur",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "145",
+      "name": "Urd",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "146",
+      "name": "Peas/chickpeas",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "148",
+      "name": "Other pulses",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "150",
+      "name": "Besan/gram products",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "152",
+      "name": "Other pulse products",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "158",
+      "name": "Pulses - PDS",
+      "category": "Pulses and pulse products",
+      "category_slug": "pulses",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "160",
+      "name": "Milk - liquid",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "161",
+      "name": "Baby food",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "162",
+      "name": "Milk - condensed/powder",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "163",
+      "name": "Curd",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "164",
+      "name": "Ghee",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "165",
+      "name": "Butter",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "166",
+      "name": "Ice cream",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "167",
+      "name": "Other milk products",
+      "category": "Milk and milk products",
+      "category_slug": "milk",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "170",
+      "name": "Item 170 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "171",
+      "name": "Item 171 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "172",
+      "name": "Item 172 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "173",
+      "name": "Item 173 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "174",
+      "name": "Item 174 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "175",
+      "name": "Item 175 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "178",
+      "name": "Item 178 (Salt and sugar)",
+      "category": "Salt and sugar",
+      "category_slug": "salt_sugar",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "180",
+      "name": "Item 180 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "181",
+      "name": "Item 181 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "182",
+      "name": "Item 182 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "183",
+      "name": "Item 183 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "184",
+      "name": "Item 184 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "185",
+      "name": "Item 185 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "188",
+      "name": "Item 188 (Edible oil)",
+      "category": "Edible oil",
+      "category_slug": "edible_oil",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "190",
+      "name": "Item 190 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "191",
+      "name": "Item 191 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "192",
+      "name": "Item 192 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "193",
+      "name": "Item 193 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "194",
+      "name": "Item 194 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "195",
+      "name": "Item 195 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "196",
+      "name": "Item 196 (Egg, fish and meat)",
+      "category": "Egg, fish and meat",
+      "category_slug": "egg_fish_meat",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "200",
+      "name": "Item 200 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "201",
+      "name": "Item 201 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "202",
+      "name": "Item 202 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "203",
+      "name": "Item 203 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "204",
+      "name": "Item 204 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "205",
+      "name": "Item 205 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "206",
+      "name": "Item 206 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "207",
+      "name": "Item 207 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "208",
+      "name": "Item 208 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "210",
+      "name": "Item 210 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "211",
+      "name": "Item 211 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "212",
+      "name": "Item 212 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "213",
+      "name": "Item 213 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "214",
+      "name": "Item 214 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "215",
+      "name": "Item 215 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "216",
+      "name": "Item 216 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "217",
+      "name": "Item 217 (Vegetables)",
+      "category": "Vegetables",
+      "category_slug": "vegetables",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "220",
+      "name": "Item 220 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "221",
+      "name": "Item 221 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "222",
+      "name": "Item 222 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "223",
+      "name": "Item 223 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "224",
+      "name": "Item 224 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "225",
+      "name": "Item 225 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "226",
+      "name": "Item 226 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "227",
+      "name": "Item 227 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "228",
+      "name": "Item 228 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "230",
+      "name": "Item 230 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "231",
+      "name": "Item 231 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "232",
+      "name": "Item 232 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "233",
+      "name": "Item 233 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "234",
+      "name": "Item 234 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "235",
+      "name": "Item 235 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "236",
+      "name": "Item 236 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "237",
+      "name": "Item 237 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "238",
+      "name": "Item 238 (Fresh fruits)",
+      "category": "Fresh fruits",
+      "category_slug": "fresh_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "240",
+      "name": "Item 240 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "241",
+      "name": "Item 241 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "242",
+      "name": "Item 242 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "243",
+      "name": "Item 243 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "245",
+      "name": "Item 245 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "246",
+      "name": "Item 246 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "247",
+      "name": "Item 247 (Dry fruits)",
+      "category": "Dry fruits",
+      "category_slug": "dry_fruits",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "250",
+      "name": "Item 250 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "251",
+      "name": "Item 251 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "252",
+      "name": "Item 252 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "253",
+      "name": "Item 253 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "254",
+      "name": "Item 254 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "255",
+      "name": "Item 255 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "256",
+      "name": "Item 256 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "257",
+      "name": "Item 257 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "258",
+      "name": "Item 258 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "260",
+      "name": "Item 260 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "261",
+      "name": "Item 261 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "263",
+      "name": "Item 263 (Spices)",
+      "category": "Spices",
+      "category_slug": "spices",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "270",
+      "name": "Item 270 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "271",
+      "name": "Item 271 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "272",
+      "name": "Item 272 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "273",
+      "name": "Item 273 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "274",
+      "name": "Item 274 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "275",
+      "name": "Item 275 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "276",
+      "name": "Item 276 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "278",
+      "name": "Item 278 (Beverages)",
+      "category": "Beverages",
+      "category_slug": "beverages",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "280",
+      "name": "Item 280 (Served processed food)",
+      "category": "Served processed food",
+      "category_slug": "served_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "281",
+      "name": "Item 281 (Served processed food)",
+      "category": "Served processed food",
+      "category_slug": "served_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "282",
+      "name": "Item 282 (Served processed food)",
+      "category": "Served processed food",
+      "category_slug": "served_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "283",
+      "name": "Item 283 (Served processed food)",
+      "category": "Served processed food",
+      "category_slug": "served_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "284",
+      "name": "Item 284 (Served processed food)",
+      "category": "Served processed food",
+      "category_slug": "served_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "290",
+      "name": "Item 290 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "291",
+      "name": "Item 291 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "292",
+      "name": "Item 292 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "293",
+      "name": "Item 293 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "294",
+      "name": "Item 294 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "295",
+      "name": "Item 295 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    },
+    {
+      "code": "296",
+      "name": "Item 296 (Packaged processed food)",
+      "category": "Packaged processed food",
+      "category_slug": "packaged_processed",
+      "is_category_subtotal": false
+    }
+  ],
+  "source_groups": [
+    "Purchase",
+    "Home-produced",
+    "Purchase + home-produced",
+    "Free collection/gift",
+    "PDS/free ration",
+    "Purchase + PDS/gift",
+    "Other",
+    "Not classified"
+  ]
+}
