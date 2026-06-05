@@ -1,0 +1,20 @@
+{
+  "generated_utc": "2026-06-05T11:15:45.861205+00:00",
+  "raw_source_folder": "Files",
+  "households": 261953,
+  "weighted_households": 291671077.85,
+  "food_weighted_value": 2664419015130.612,
+  "out_home_weighted_value_sections_5_6": 165031137091.3678,
+  "item_cube_rows": 454914,
+  "category_count": 14,
+  "detail_item_count": 169,
+  "notes": [
+    "Food category values use HCES subtotal item codes from Sections 5, 6 and 7 to avoid double-counting detailed item rows.",
+    "Item ranking/source views use detailed item rows and exclude category subtotal rows.",
+    "Questionnaire_No and Level are excluded from the household join key because modules use different questionnaire identifiers.",
+    "Total_Consumption_Value is consumption value. It may include imputed values for non-market sources, not only cash purchases."
+  ],
+  "category_rows_used": 3192028,
+  "detail_rows_used": 11319673,
+  "rows_missing_household_context": 0
+}
